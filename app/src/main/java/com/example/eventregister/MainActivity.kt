@@ -57,22 +57,74 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    when (checkedId) {
+    when (checkedId)
+    {
 
         binding.rbNam.id -> {
-            Toast.makeText(
-                this,
-                "Bạn đã chọn giới tính Nam",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
+        Toast.makeText(
+            this,
+            "Bạn đã chọn giới tính Nam",
+            Toast.LENGTH_SHORT
+        ).show()
+    }
 
         binding.rbNu.id -> {
+        Toast.makeText(
+            this,
+            "Bạn đã chọn giới tính Nữ",
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+    }
+private fun xuLyCheckBox() {
+
+    binding.cbFacebook.setOnCheckedChangeListener { _, isChecked ->
+
+        if (isChecked) {
             Toast.makeText(
                 this,
-                "Bạn đã chọn giới tính Nữ",
+                "Đã chọn Facebook",
+                Toast.LENGTH_SHORT
+            ).show()
+        } else {
+            Toast.makeText(
+                this,
+                "Đã bỏ chọn Facebook",
                 Toast.LENGTH_SHORT
             ).show()
         }
     }
-}   
+
+    binding.cbInstagram.setOnCheckedChangeListener { _, isChecked ->
+
+        if (isChecked) {
+            Toast.makeText(
+                this,
+                "Đã chọn Instagram",
+                Toast.LENGTH_SHORT
+            ).show()
+        } else {
+            Toast.makeText(
+                this,
+                "Đã bỏ chọn Instagram",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+    binding.cbTikTok.setOnCheckedChangeListener { _, isChecked ->
+
+        if (isChecked) {
+            Toast.makeText(
+                this,
+                "Đã chọn TikTok",
+                Toast.LENGTH_SHORT
+            ).show()
+        } else {
+            Toast.makeText(
+                this,
+                "Đã bỏ chọn TikTok",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
