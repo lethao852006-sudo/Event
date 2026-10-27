@@ -128,3 +128,51 @@ private fun xuLyCheckBox() {
             ).show()
         }
     }
+    private fun xuLyButton() {
+
+        binding.btnDangKy.setOnClickListener {
+
+            val hoTen = binding.edtHoTen.text.toString().trim()
+
+            val mssv = binding.edtMSSV.text.toString().trim()
+
+            val email = binding.edtEmail.text.toString().trim()
+
+            val gioiTinh =
+                when (binding.rgGioiTinh.checkedRadioButtonId) {
+
+                    binding.rbNam.id -> "Nam"
+
+                    binding.rbNu.id -> "Nữ"
+
+                    else -> "Chưa chọn"
+                }
+
+            val mangXaHoi = mutableListOf<String>()
+
+            if (binding.cbFacebook.isChecked) {
+                mangXaHoi.add("Facebook")
+            }
+
+            if (binding.cbInstagram.isChecked) {
+                mangXaHoi.add("Instagram")
+            }
+
+            if (binding.cbTikTok.isChecked) {
+                mangXaHoi.add("TikTok")
+            }
+
+            val danhSachMangXaHoi =
+                if (mangXaHoi.isEmpty()) {
+                    "Không chọn"
+                } else {
+                    mangXaHoi.joinToString(", ")
+                }
+
+            Toast.makeText(
+                this,
+                "Đang xử lý đăng ký...",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
