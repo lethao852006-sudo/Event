@@ -11,15 +11,18 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Khởi tạo ViewBinding
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val hoTen = intent.getStringExtra("hoTen")
-        val mssv = intent.getStringExtra("mssv")
-        val email = intent.getStringExtra("email")
-        val gioiTinh = intent.getStringExtra("gioiTinh")
-        val mangXaHoi = intent.getStringExtra("mangXaHoi")
+        // Nhận dữ liệu từ Intent gửi sang từ MainActivity
+        val hoTen = intent.getStringExtra("KEY_HOTEN")
+        val mssv = intent.getStringExtra("KEY_MSSV")
+        val email = intent.getStringExtra("KEY_EMAIL")
+        val gioiTinh = intent.getStringExtra("KEY_GIOITINH")
+        val mangXaHoi = intent.getStringExtra("KEY_MXH")
 
+        // Hiển thị dữ liệu lên các TextView tương ứng
         binding.tvHoTen.text = "Họ và tên: $hoTen"
         binding.tvMSSV.text = "Mã sinh viên: $mssv"
         binding.tvEmail.text = "Email: $email"
