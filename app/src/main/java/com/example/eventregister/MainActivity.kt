@@ -56,3 +56,23 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    when (checkedId) {
+
+        binding.rbNam.id -> {
+            Toast.makeText(
+                this,
+                "Bạn đã chọn giới tính Nam",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
+        binding.rbNu.id -> {
+            Toast.makeText(
+                this,
+                "Bạn đã chọn giới tính Nữ",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+}   
